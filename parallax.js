@@ -1,5 +1,5 @@
 /*!
- * parallax.js v1 (https://github.com/PavelKorshunov)
+ * parallax.js v1.1 (https://github.com/PavelKorshunov)
  * @copyright 2017 Pavel Korshunov
  * use class="parallax" data-image-src="path/to/images.jpg"
  */
@@ -16,12 +16,10 @@
 
 		return this.each(function(){
 
-			var globalHeight = $(window).height();
-
 			//style of parallax
 
 			$(this).css({
-				"height" : globalHeight,
+				"height" : "100vh",
 				"min-height" : "500px",
 				"position" : "relative",
 				"overflow" : "hidden"
@@ -33,10 +31,11 @@
 
 			function parallaxUse() {
 
-				var myheight = $(this).height();
+				var globalHeight = $(window).height();
+
 				var thisImgClass = $(".parallax").find(".image-parallax");
 				thisImgClass.css({
-					"height" : myheight,
+					"height" : "100%",
 					"min-height" : "500px",
 				});
 
